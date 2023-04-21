@@ -1,5 +1,7 @@
 package ilu2;
 
+
+import java.lang.String;
 public class Welcome {
 	
 	
@@ -11,12 +13,14 @@ public class Welcome {
 	
 	public static String welcome(String input) {
 		StringBuilder reponse = new StringBuilder();
+		if (input == null || input.trim().equals("") )  {
+			return "Hello, my friend";
+		}
+		input = input.trim();
 		String toCap = maj(input);
-	
 		reponse.append("Hello, " + toCap);
 		
 		return reponse.toString();
 	}
-	
-	
+
 }
