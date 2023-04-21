@@ -8,7 +8,17 @@ class WelcomeTest {
 	
 	@Test
 	void testWelcom() {
-		assertEquals("Hello, ballon", Welcome.welcome("ballon"));
+		assertEquals("Hello, Ballon", Welcome.welcome("ballon"));
+		assertEquals("Hello, Moscow", Welcome.welcome("moscow"));
 	}
+	
+	@Test
+	void testWelcom2() {
+		assertEquals("Hello, my friend", Welcome.welcome(""));
+		assertEquals("Hello, my friend", Welcome.welcome(" "));
+		assertEquals("Hello, my friend", Welcome.welcome("        "));
+		assertEquals("Hello, my friend", Welcome.welcome(null));
+	}
+	
 
 }
