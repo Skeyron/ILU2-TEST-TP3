@@ -52,8 +52,11 @@ public class Welcome {
 		if (min.length > 0) {
 			for (int i = 0; i < min.length; i++) {
 				minOutput.append(min[i]);
-				if (i!= min.length -1) {
+				if (i!= min.length -1 && i!= min.length - 2) {
 					minOutput.append(", ");
+				}
+				if (i == min.length -2 ) {
+					minOutput.append(" and ");
 				}
 			}
 			return minOutput.toString();
@@ -67,8 +70,11 @@ public class Welcome {
 		if (maj.length > 0) {
 			for (int i = 0; i < maj.length; i++) {
 				majOutput.append(maj[i]);
-				if (i!= maj.length -1) {
+				if (i!= maj.length -1 && i!= maj.length - 2) {
 					majOutput.append(", ");
+				}
+				if (i == maj.length -2 ) {
+					majOutput.append(" AND ");
 				}
 			}
 			return majOutput.toString();
@@ -77,8 +83,6 @@ public class Welcome {
 	}
 	
 	private static String manyNames(String input) {
-		StringBuilder majOutput = new StringBuilder();
-		StringBuilder minOutput = new StringBuilder();
 		StringBuilder reponse = new StringBuilder();
 		if (minList(input) == null) {
 			reponse.append("HELLO, ");
